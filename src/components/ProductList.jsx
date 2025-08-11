@@ -1,4 +1,4 @@
-import Productitems from "./ProductItems.jsx";
+import Productitems from "./Productitems.jsx";
 
 function ProductList(props) {
   const { productList } = props;
