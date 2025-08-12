@@ -56,7 +56,7 @@ function Cart() {
               >
                 −
               </button>
-              <span className="text-lg font-medium">{item.qty}</span>
+              <span className="text-lg text-white font-medium">{item.qty}</span>
               <button
                 onClick={() => increaseQty(item.id)}
                 className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
@@ -67,7 +67,7 @@ function Cart() {
 
               
             <div className="flex flex-col items-end mt-3 md:mt-0">
-              <p className="font-bold text-gray-800 dark:text-white">
+              <p className="font-bold text-white-800 dark:text-white">
                 ${(item.price * item.qty).toFixed(2)}
               </p>
               <button
@@ -85,7 +85,7 @@ function Cart() {
       <div className="flex justify-end mt-6 border-t pt-4">
         <h3 className="text-xl font-bold">
           Total:{" "}
-          <span className="text-indigo-600 dark:text-indigo-400">
+          <span className="text-white-600 dark:text-white-400">
             ${total.toFixed(2)}
           </span>
         </h3>
