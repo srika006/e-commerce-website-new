@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
+import {PageContainer} from "../context/PageContextProvider";
 
 const Productitems = ({ product }) => {
   const [bool, setBool] = useState(true);
   const [count, setCount] = useState(1);
+  const { addToCart } = useContext(PageContainer);
 
   return (
     <div
       key={product.id}
       className="flex flex-col w-full m-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300"
     >
-      {/* Upper Half - Image */}
+     
       <div className=" bg-gray-50 dark:bg-gray-700 ">
         <img
           src={product.image}
@@ -18,7 +20,6 @@ const Productitems = ({ product }) => {
         />
       </div>
 
-      {/* Lower Half - Details */}
       <div className="flex flex-col justify-between flex-grow p-4 text-center">
         <h1 className="font-semibold text-gray-800 dark:text-white text-sm line-clamp-2 mb-2">
           {product.title}
@@ -27,11 +28,11 @@ const Productitems = ({ product }) => {
           ${product.price}
         </p>
 
-        {/* Buttons */}
+        
         {bool ? (
           <button
             className="bg-indigo-500 hover:bg-indigo-600 text-white font-medium px-6 py-2 rounded-full shadow-md transition-colors duration-200"
-            onClick={() => setBool(false)}
+             onClick={() => addToCart(product)}
           >
             Add to Cart
           </button>

@@ -131,9 +131,9 @@ function Home() {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      {/* Header */}
+      
       <header className="flex flex-wrap items-center justify-between px-6 py-4 bg-gradient-to-r from-purple-500 to-indigo-500 shadow-md">
-        {/* Search Bar */}
+        
         <div className="flex items-center gap-2 w-full md:w-1/2 bg-white rounded-full px-4 py-2 shadow-inner">
           <input
             type="text"
@@ -143,7 +143,7 @@ function Home() {
             className="flex-1 bg-transparent outline-none text-gray-700 placeholder-gray-400"
           />
           
-          {/* Sort Ascending */}
+          
           <button
             onClick={() => handleSort(1)}
             className="p-1 rounded hover:bg-gray-100 transition"
@@ -159,7 +159,7 @@ function Home() {
             </svg>
           </button>
 
-          {/* Sort Descending */}
+       
           <button
             onClick={() => handleSort(-1)}
             className="p-1 rounded hover:bg-gray-100 transition"
@@ -176,7 +176,6 @@ function Home() {
           </button>
         </div>
 
-        {/* Navigation Links */}
         <nav className="flex gap-6 text-white font-medium mt-3 md:mt-0">
           <Link to="/" className="hover:underline transition">
             Home
@@ -186,7 +185,7 @@ function Home() {
           </Link>
         </nav>
 
-        {/* Dark Mode Toggle */}
+        
         <button
           onClick={toggleDarkMode}
           className="p-2 rounded-full bg-white shadow hover:scale-110 transition"
@@ -196,10 +195,10 @@ function Home() {
         </button>
       </header>
 
-      {/* Categories */}
+     
       <div className="bg-gray-100 dark:bg-gray-800 py-3 px-4">
         <div className="flex items-center justify-center gap-4 overflow-x-auto">
-          {/* Add "All categories" option */}
+          
           <button
             onClick={() => handleCategoryChange("All categories")}
             className={`px-4 py-2 rounded-full text-sm font-medium transition whitespace-nowrap ${
@@ -227,7 +226,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Products */}
+      
       <main className={`min-h-screen p-6 ${darkMode ? "bg-gray-900 text-white" : "bg-white"}`}>
         {filteredSortedGroupArr.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -253,10 +252,10 @@ function Home() {
         )}
       </main>
 
-      {/* Pagination */}
+     
       {totalPages > 1 && (
         <div className="flex justify-center items-center gap-3 py-8 bg-gray-50 dark:bg-gray-800">
-          {/* Previous Button */}
+          
           <button
             onClick={() => setPageNum(pageNum - 1)}
             disabled={pageNum === 1}
@@ -266,12 +265,12 @@ function Home() {
             ‹
           </button>
 
-          {/* Page Info */}
+          
           <span className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300">
             Page {pageNum} of {totalPages}
           </span>
 
-          {/* Next Button */}
+          
           <button
             onClick={() => setPageNum(pageNum + 1)}
             disabled={pageNum === totalPages}
